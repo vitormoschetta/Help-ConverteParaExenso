@@ -1,5 +1,6 @@
-# Converter valores para Extenso (descrição do valor ):
+# Converter valores para Extenso (numeros, moeda, data, etc)
 
+#### Numero e Moeda:
 
 ```
 public static class ConverterParaExtenso
@@ -275,5 +276,42 @@ public static class ConverterParaExtenso
 
   }
   
-  ```
+ ```
+  
+  
+#### Data:
+
+###### Mês em português por extenso
+```
+mesExtenso = new DateTime(1900, mes, 1).ToString("MMMM", new CultureInfo("pt-BR"));
+```
+###### Mês abreviado em português também.
+``` 
+mesExtenso = new CultureInfo("pt-BR").DateTimeFormat.GetAbbreviatedMonthName(mes);
+```
+###### Mês (int) por extenso com primeira letra maiúscula.
+```
+string month = new CultureInfo("pt-BR").DateTimeFormat.GetMonthName(mes);
+mesExtenso = char.ToUpper(month[0]) + month.Substring(1);
+```
+###### Dia da semana (int) por extenso em português (segunda-feira)
+```
+diaExtenso = new CultureInfo("pt-BR").DateTimeFormat.GetDayName((DayOfWeek)1);
+```
+###### Dia da semana abreviado (seg)
+```
+diaExtenso = new CultureInfo("pt-BR").DateTimeFormat.GetAbbreviatedDayName(DayOfWeek.Monday);
+```
+###### Dia atual por extenso
+```
+diaExtenso = DateTime.Now.ToString("dddd", new CultureInfo("pt-BR"));
+```
+###### Dia por extenso com primeira letra maiúscula.
+```
+string day = new CultureInfo("pt-BR").DateTimeFormat.GetDayName(DateTime.Now.DayOfWeek);
+diaExtenso = char.ToUpper(day[0]) + day.Substring(1);
+```
+
+
+@using System.Globalization;
   
