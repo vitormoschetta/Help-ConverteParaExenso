@@ -1,6 +1,6 @@
 # Converter valores para Extenso (numeros, moeda, data, etc)
 
-#### Numero e Moeda:
+## Numero e Moeda:
 
 ```
 public static class ConverterParaExtenso
@@ -279,7 +279,7 @@ public static class ConverterParaExtenso
  ```
   
   
-#### Data:
+## Data:
 
 ###### Mês em português por extenso
 ```
